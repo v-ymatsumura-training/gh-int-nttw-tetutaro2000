@@ -16,7 +16,9 @@ export class GameManager {
   /** Game State */
   static state: GameState
   /** Start Tiles Count */
-  static startTiles: number = 1
+feature/start-tiles-4
+  static startTiles: number = 4
+main
 
   constructor(size: number) {
     GameManager.size = size
@@ -118,7 +120,7 @@ export class GameManager {
    */
   static addRandomTile(): void {
     if (Grid.cellsAvailable()) {
-      const value = Math.random() < 0.1 ? 2 : 4
+      const value = Math.random() < 0.5 ? 2 : 4
       const cell = Grid.randomAvailableCell()
 
       if (cell !== null) Grid.insertTile(new Tile(cell, value))
